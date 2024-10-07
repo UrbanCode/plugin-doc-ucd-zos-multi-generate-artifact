@@ -1,70 +1,61 @@
-# Usage
+# z/OS Multi Generate Artifact Information - Usage
 
----
+Use the Generate Multiple Artifact Information plug-in to generate one or more multiple properties from z/OS artifacts. The plug-in extracts data based on filters.
 
-The z/OS Rexx Executor plug-in will execute statements provided in a dataset or inline in the plugin step.
- 
-Select **Source type** as **DATASET** from the drop-down and 
-enter the dataset in the **Source Value**. 
-Fully qualified dataset needs to be enclosed in single quotes.
-When the quotes are omitted then, the TSO prefix of the id running the 
-plugin step is prefixed to the Source Dataset.
-  
-(or)
+## Example
 
-Select **Source type** as **INLINE** from the drop-down and 
-then in the **Source Value** enter REXX statements beginning with a **/\* REXX \*/** statement.
+This examples demonstrates using the plug-in to extract data based on filters to generate multiple templates in JSON format. The example is based on the version and containers shown below.
 
-Arguments can be passed to the REXX program with/without quotes. 
-However, if there are more than one argument then arguments must be separated by a space.
+![](media/zos_example_containers.jpg?resize=640%2C189)
 
-The **SYSPROC** field allows user to pass datasets containing REXX programs 
-that will be used by the REXX program run by the plugin step. 
-Multiple **SYSPROC** datasets can be passed by separating datasets by a comma(,).
+The sample JSON contains two templates assigned to properties Prop-DBRM and Prop-CICS.
 
-### Setting output property
+```
+{
+    "Prop-DBRM" : " BIND (${member}) LIBRARY(${dataset}) \n" ,
+    "Prop-CICS" : " CEMT SET PROGRAM(${member}) NEWC \n"
+}
 
-This plugin allows user to set output properties from the REXX program and 
-later to be used in successive steps of a process. 
-A user REXX program can simply invoke a call to **SETPROP** with two arguments.
+```
 
-The first argument is output property name and 
-the second argument is the property value.
+* Prop-DBRM contains each members bind statements for DB2 Binding process
+* Prop-CICS contains RDO commands to set the latest copy of program in CICS
 
-> CALL SETPROP propertyName propertyValue
+There is a CICS program under the COBOL container with name the CARP001 as shown below.
 
-For example, below REXX snippet will set an output property **currentDate** with value of **date** variable
+![](media/zos_example_cics.jpg?resize=602%2C436)
 
-***
-    /* REXX */
-    date = DATE('S')  /* Returns date in YYYYMMDD format E.g., 20120327 */
-    CALL SETPROP "currentDate" date   
+To filter COBOL and DBRM containers, the JSON template in Container filter JSON can be defined as:
 
-### Setting multi-line output property
+```
+{
+    "Prop-CICS" : "/.*COBOL/",
+    "Prop-DBRM" : "/.*DBRM/"
+}
+```
 
-To set a multi-line output property, the lines of the property value must be separated 
-by a delimiter returned by inbuilt program **GETDLMTR** 
+To filter member/resource name under the above container, the JSON template in Resource filter JSON can be defined as:
 
-***
-    /* REXX */
-    delimiter = GETDLMTR() /* Return delimiter to separate lines */
-    lines = "This is first line" || delimiter || "This is second line"  
-    CALL SETPROP "outputLines" lines
-    
-Will set property **outputLines** to below value
+```
+{
+    "Prop-CICS": "CARP001"
+}
+```
 
-***
-    This is first line
-    This is second line
 
-### Referring properties from successive steps
+After the plug-in step completes, the following output is received. Please note that in addition to Prop-CICS and Prop-DBRM, we generate an additional count (Prop-CICS-count and Prop-DBRM-count) that can be used with a “switch” step in the component process to decide whether to do a bind or not.
 
-If the rexx step name is **Run-Rexx-Program** and output property name is **currentDate**
-then the output properties can be referred by the successive steps as below
+![](media/zos_example_output_cics.jpg?resize=602%2C35)
 
-> ${p:Run-Rexx-Program/currentDate}
+![](media/zos_example_output_dbrm.jpg?resize=602%2C68)
 
-**Note**
+Similarly, you can deploy and custom property filters to create a template with only selected elements.
 
-From plugin version 2, an output property __RexxReturnCode__ will store the return/exit code from REXX program.
+Watch video in link below on how to migrate from regular generate artifact information step to multi artifact information step – 
 
+[Multi Generate Artifact Information Plugin](https://community.ibm.com/community/user/wasdevops/viewdocument/ucd-zos-11-multi-generate-arti?CommunityKey=9adfe6b6-2e23-4895-8b27-38b93b5e152c&tab=librarydocuments)
+
+
+|          Back to ...          |                                |                                                                                 Latest Version                                                                                  | z/OS Multi Generate Artifact Information |                         |                   |                           |
+|:-----------------------------:|:------------------------------:|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:----------------------------------------:|:-----------------------:|:-----------------:|:-------------------------:|
+| [All Plugins](../../index.md) | [Deploy Plugins](../README.md) | [9.1168826](https://raw.githubusercontent.com/UrbanCode/IBM-UCD-PLUGINS/main/files/zos-multi-generate-artifact-info/ucd-plugins-zos-multi-generate-artifact-info-9.1168826.zip) |           [Readme](README.md)            | [Overview](overview.md) | [Steps](steps.md) | [Downloads](downloads.md) |
