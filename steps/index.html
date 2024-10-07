@@ -9,7 +9,7 @@
       
       
       
-        <link rel="prev" href="../overview/">
+        <link rel="prev" href="../downloads/">
       
       
         <link rel="next" href="../usage/">
@@ -20,7 +20,7 @@
     
     
       
-        <title>z/OS Multi Generate Artifact Information - Process Steps - z/OS Multi Generate Artifact Information</title>
+        <title>Steps - z/OS Multi Generate Artifact Information</title>
       
     
     
@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#zos-multi-generate-artifact-information-process-steps" class="md-skip">
+        <a href="#steps" class="md-skip">
           Skip to content
         </a>
       
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              z/OS Multi Generate Artifact Information - Process Steps
+              Steps
             
           </span>
         </div>
@@ -196,7 +196,7 @@
   
     
   
-  z/OS Multi Generate Artifact Information
+  Overview
 
       </a>
     </li>
@@ -213,24 +213,7 @@
   
     
   
-  z/OS Multi Generate Artifact Information - Downloads
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../overview/" class="md-tabs__link">
-        
-  
-    
-  
-  z/OS Multi Generate Artifact Information - Overview
+  Downloads
 
       </a>
     </li>
@@ -249,7 +232,7 @@
   
     
   
-  z/OS Multi Generate Artifact Information - Process Steps
+  Steps
 
       </a>
     </li>
@@ -266,7 +249,7 @@
   
     
   
-  z/OS Multi Generate Artifact Information - Usage
+  Usage
 
       </a>
     </li>
@@ -325,7 +308,7 @@
         
   
   <span class="md-ellipsis">
-    z/OS Multi Generate Artifact Information
+    Overview
   </span>
   
 
@@ -345,27 +328,7 @@
         
   
   <span class="md-ellipsis">
-    z/OS Multi Generate Artifact Information - Downloads
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../overview/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    z/OS Multi Generate Artifact Information - Overview
+    Downloads
   </span>
   
 
@@ -394,7 +357,7 @@
           
   
   <span class="md-ellipsis">
-    z/OS Multi Generate Artifact Information - Process Steps
+    Steps
   </span>
   
 
@@ -405,7 +368,7 @@
         
   
   <span class="md-ellipsis">
-    z/OS Multi Generate Artifact Information - Process Steps
+    Steps
   </span>
   
 
@@ -463,7 +426,7 @@
         
   
   <span class="md-ellipsis">
-    z/OS Multi Generate Artifact Information - Usage
+    Usage
   </span>
   
 
@@ -487,14 +450,14 @@
                   
 
 
-<h1 id="zos-multi-generate-artifact-information-process-steps">z/OS Multi Generate Artifact Information - Process Steps</h1>
+<h1 id="steps">Steps</h1>
 <ul>
 <li><a href="#generate-multiple-artifact-information">Generate Multiple Artifact Information</a></li>
 </ul>
 <blockquote>
 <h2 id="note"><strong>Note:</strong></h2>
 <ul>
-<li>Deployment Action filter is applicable only if <strong>Backup</strong> is enabled in <a href="../zos-deploy/steps.md#deploy-data-sets">Deploy Data Sets</a> step</li>
+<li>Deployment Action filter is applicable only if <strong>Backup</strong> is enabled in <strong>Deploy Data Sets</strong> step</li>
 <li>Deployment Action filter is applicable only for loop types <strong>Sequential Datasets</strong> or <strong>PDS Members</strong></li>
 <li>Target Dataset Name filter is applicable for only <strong>Dataset/PDS Member</strong> loop types</li>
 </ul>
@@ -574,30 +537,6 @@
 <td>Define template for each output property to generate customized text. Subsequent steps can access the customized text with <code>${p:Step-Name/output-property-name}</code>. For example: if the step name is ‘Bind Card Generator’ and output property is ‘CicsBindText’ then the property can be referred in subsequent steps as <code>${p:Bind Card Generator/CicsBindText}</code>. Add separators like comma or newline using character ‘,’ or ‘\n’ in the template as needed. <br/>Use <code>${propname}</code> to access custom properties. <br/>The following built-in properties are available: <br/><code>${sourceDataset}</code> for the source dataset name<br/><code>${dataset}</code> for the target dataset name<br/><code>${member}</code> for the member name<br/><code>${deployType}</code> for the deployment type<br/><code>${artifactGroup}</code> for the generic artifact group name<br/><code>${artifact}</code> for the generic artifact name<br/><code>${directory}</code> for the source directory name<br/><code>${file}</code> for the file name<br/><code>${inputsUrl}</code> for the url of the inputs<br/>All property names are case-sensitive. Do not use the built-in names for custom properties.</td>
 <td>Yes</td>
 <td>templateText</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">Back to ...</th>
-<th style="text-align: center;"></th>
-<th style="text-align: center;">Latest Version</th>
-<th style="text-align: center;">z/OS Multi Generate Artifact Information</th>
-<th style="text-align: center;"></th>
-<th style="text-align: center;"></th>
-<th style="text-align: center;"></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;"><a href="../../index.md">All Plugins</a></td>
-<td style="text-align: center;"><a href="../README.md">Deploy Plugins</a></td>
-<td style="text-align: center;"><a href="https://raw.githubusercontent.com/UrbanCode/IBM-UCD-PLUGINS/main/files/zos-multi-generate-artifact-info/ucd-plugins-zos-multi-generate-artifact-info-9.1168826.zip">9.1168826</a></td>
-<td style="text-align: center;"><a href="../">Readme</a></td>
-<td style="text-align: center;"><a href="../overview/">Overview</a></td>
-<td style="text-align: center;"><a href="../usage/">Usage</a></td>
-<td style="text-align: center;"><a href="../downloads/">Downloads</a></td>
 </tr>
 </tbody>
 </table>
