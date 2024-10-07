@@ -18,7 +18,7 @@
     
     
       
-        <title>Usage - z/OS Rexx Executor</title>
+        <title>z/OS Multi Generate Artifact Information - Usage - z/OS Multi Generate Artifact Information</title>
       
     
     
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#usage" class="md-skip">
+        <a href="#zos-multi-generate-artifact-information-usage" class="md-skip">
           Skip to content
         </a>
       
@@ -80,7 +80,7 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="z/OS Rexx Executor" class="md-header__button md-logo" aria-label="z/OS Rexx Executor" data-md-component="logo">
+    <a href=".." title="z/OS Multi Generate Artifact Information" class="md-header__button md-logo" aria-label="z/OS Multi Generate Artifact Information" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
@@ -94,13 +94,13 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            z/OS Rexx Executor
+            z/OS Multi Generate Artifact Information
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Usage
+              z/OS Multi Generate Artifact Information - Usage
             
           </span>
         </div>
@@ -194,7 +194,7 @@
   
     
   
-  Overview
+  z/OS Multi Generate Artifact Information
 
       </a>
     </li>
@@ -211,7 +211,7 @@
   
     
   
-  Downloads
+  z/OS Multi Generate Artifact Information - Downloads
 
       </a>
     </li>
@@ -228,7 +228,7 @@
   
     
   
-  Overview
+  z/OS Multi Generate Artifact Information - Overview
 
       </a>
     </li>
@@ -245,7 +245,7 @@
   
     
   
-  Steps
+  z/OS Multi Generate Artifact Information - Process Steps
 
       </a>
     </li>
@@ -264,7 +264,7 @@
   
     
   
-  Usage
+  z/OS Multi Generate Artifact Information - Usage
 
       </a>
     </li>
@@ -301,13 +301,13 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="z/OS Rexx Executor" class="md-nav__button md-logo" aria-label="z/OS Rexx Executor" data-md-component="logo">
+    <a href=".." title="z/OS Multi Generate Artifact Information" class="md-nav__button md-logo" aria-label="z/OS Multi Generate Artifact Information" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
 
     </a>
-    z/OS Rexx Executor
+    z/OS Multi Generate Artifact Information
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -323,7 +323,7 @@
         
   
   <span class="md-ellipsis">
-    Overview
+    z/OS Multi Generate Artifact Information
   </span>
   
 
@@ -343,7 +343,7 @@
         
   
   <span class="md-ellipsis">
-    Downloads
+    z/OS Multi Generate Artifact Information - Downloads
   </span>
   
 
@@ -363,7 +363,7 @@
         
   
   <span class="md-ellipsis">
-    Overview
+    z/OS Multi Generate Artifact Information - Overview
   </span>
   
 
@@ -383,7 +383,7 @@
         
   
   <span class="md-ellipsis">
-    Steps
+    z/OS Multi Generate Artifact Information - Process Steps
   </span>
   
 
@@ -412,7 +412,7 @@
           
   
   <span class="md-ellipsis">
-    Usage
+    z/OS Multi Generate Artifact Information - Usage
   </span>
   
 
@@ -423,7 +423,7 @@
         
   
   <span class="md-ellipsis">
-    Usage
+    z/OS Multi Generate Artifact Information - Usage
   </span>
   
 
@@ -445,27 +445,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#setting-output-property" class="md-nav__link">
+  <a href="#example" class="md-nav__link">
     <span class="md-ellipsis">
-      Setting output property
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#setting-multi-line-output-property" class="md-nav__link">
-    <span class="md-ellipsis">
-      Setting multi-line output property
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#referring-properties-from-successive-steps" class="md-nav__link">
-    <span class="md-ellipsis">
-      Referring properties from successive steps
+      Example
     </span>
   </a>
   
@@ -494,59 +476,65 @@
                   
 
 
-<h1 id="usage">Usage</h1>
-<hr />
-<p>The z/OS Rexx Executor plug-in will execute statements provided in a dataset or inline in the plugin step.</p>
-<p>Select <strong>Source type</strong> as <strong>DATASET</strong> from the drop-down and 
-enter the dataset in the <strong>Source Value</strong>. 
-Fully qualified dataset needs to be enclosed in single quotes.
-When the quotes are omitted then, the TSO prefix of the id running the 
-plugin step is prefixed to the Source Dataset.</p>
-<p>(or)</p>
-<p>Select <strong>Source type</strong> as <strong>INLINE</strong> from the drop-down and 
-then in the <strong>Source Value</strong> enter REXX statements beginning with a <strong>/* REXX */</strong> statement.</p>
-<p>Arguments can be passed to the REXX program with/without quotes. 
-However, if there are more than one argument then arguments must be separated by a space.</p>
-<p>The <strong>SYSPROC</strong> field allows user to pass datasets containing REXX programs 
-that will be used by the REXX program run by the plugin step. 
-Multiple <strong>SYSPROC</strong> datasets can be passed by separating datasets by a comma(,).</p>
-<h3 id="setting-output-property">Setting output property</h3>
-<p>This plugin allows user to set output properties from the REXX program and 
-later to be used in successive steps of a process. 
-A user REXX program can simply invoke a call to <strong>SETPROP</strong> with two arguments.</p>
-<p>The first argument is output property name and 
-the second argument is the property value.</p>
-<blockquote>
-<p>CALL SETPROP propertyName propertyValue</p>
-</blockquote>
-<p>For example, below REXX snippet will set an output property <strong>currentDate</strong> with value of <strong>date</strong> variable</p>
-<hr />
-<pre><code>/* REXX */
-date = DATE('S')  /* Returns date in YYYYMMDD format E.g., 20120327 */
-CALL SETPROP "currentDate" date
+<h1 id="zos-multi-generate-artifact-information-usage">z/OS Multi Generate Artifact Information - Usage</h1>
+<p>Use the Generate Multiple Artifact Information plug-in to generate one or more multiple properties from z/OS artifacts. The plug-in extracts data based on filters.</p>
+<h2 id="example">Example</h2>
+<p>This examples demonstrates using the plug-in to extract data based on filters to generate multiple templates in JSON format. The example is based on the version and containers shown below.</p>
+<p><img alt="" src="../media/zos_example_containers.jpg?resize=640%2C189" /></p>
+<p>The sample JSON contains two templates assigned to properties Prop-DBRM and Prop-CICS.</p>
+<pre><code>{
+    &quot;Prop-DBRM&quot; : &quot; BIND (${member}) LIBRARY(${dataset}) \n&quot; ,
+    &quot;Prop-CICS&quot; : &quot; CEMT SET PROGRAM(${member}) NEWC \n&quot;
+}
+
 </code></pre>
-<h3 id="setting-multi-line-output-property">Setting multi-line output property</h3>
-<p>To set a multi-line output property, the lines of the property value must be separated 
-by a delimiter returned by inbuilt program <strong>GETDLMTR</strong> </p>
-<hr />
-<pre><code>/* REXX */
-delimiter = GETDLMTR() /* Return delimiter to separate lines */
-lines = "This is first line" || delimiter || "This is second line"  
-CALL SETPROP "outputLines" lines
+<ul>
+<li>Prop-DBRM contains each members bind statements for DB2 Binding process</li>
+<li>Prop-CICS contains RDO commands to set the latest copy of program in CICS</li>
+</ul>
+<p>There is a CICS program under the COBOL container with name the CARP001 as shown below.</p>
+<p><img alt="" src="../media/zos_example_cics.jpg?resize=602%2C436" /></p>
+<p>To filter COBOL and DBRM containers, the JSON template in Container filter JSON can be defined as:</p>
+<pre><code>{
+    &quot;Prop-CICS&quot; : &quot;/.*COBOL/&quot;,
+    &quot;Prop-DBRM&quot; : &quot;/.*DBRM/&quot;
+}
 </code></pre>
-<p>Will set property <strong>outputLines</strong> to below value</p>
-<hr />
-<pre><code>This is first line
-This is second line
+<p>To filter member/resource name under the above container, the JSON template in Resource filter JSON can be defined as:</p>
+<pre><code>{
+    &quot;Prop-CICS&quot;: &quot;CARP001&quot;
+}
 </code></pre>
-<h3 id="referring-properties-from-successive-steps">Referring properties from successive steps</h3>
-<p>If the rexx step name is <strong>Run-Rexx-Program</strong> and output property name is <strong>currentDate</strong>
-then the output properties can be referred by the successive steps as below</p>
-<blockquote>
-<p>${p:Run-Rexx-Program/currentDate}</p>
-</blockquote>
-<p><strong>Note</strong></p>
-<p>From plugin version 2, an output property <strong>RexxReturnCode</strong> will store the return/exit code from REXX program.</p>
+<p>After the plug-in step completes, the following output is received. Please note that in addition to Prop-CICS and Prop-DBRM, we generate an additional count (Prop-CICS-count and Prop-DBRM-count) that can be used with a “switch” step in the component process to decide whether to do a bind or not.</p>
+<p><img alt="" src="../media/zos_example_output_cics.jpg?resize=602%2C35" /></p>
+<p><img alt="" src="../media/zos_example_output_dbrm.jpg?resize=602%2C68" /></p>
+<p>Similarly, you can deploy and custom property filters to create a template with only selected elements.</p>
+<p>Watch video in link below on how to migrate from regular generate artifact information step to multi artifact information step – </p>
+<p><a href="https://community.ibm.com/community/user/wasdevops/viewdocument/ucd-zos-11-multi-generate-arti?CommunityKey=9adfe6b6-2e23-4895-8b27-38b93b5e152c&amp;tab=librarydocuments">Multi Generate Artifact Information Plugin</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Back to ...</th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;">Latest Version</th>
+<th style="text-align: center;">z/OS Multi Generate Artifact Information</th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="../../index.md">All Plugins</a></td>
+<td style="text-align: center;"><a href="../README.md">Deploy Plugins</a></td>
+<td style="text-align: center;"><a href="https://raw.githubusercontent.com/UrbanCode/IBM-UCD-PLUGINS/main/files/zos-multi-generate-artifact-info/ucd-plugins-zos-multi-generate-artifact-info-9.1168826.zip">9.1168826</a></td>
+<td style="text-align: center;"><a href="../">Readme</a></td>
+<td style="text-align: center;"><a href="../overview/">Overview</a></td>
+<td style="text-align: center;"><a href="../steps/">Steps</a></td>
+<td style="text-align: center;"><a href="../downloads/">Downloads</a></td>
+</tr>
+</tbody>
+</table>
 
 
 
