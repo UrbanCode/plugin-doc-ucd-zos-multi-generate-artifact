@@ -1,4 +1,4 @@
-# z/OS Multi Generate Artifact Information - Usage
+# Usage
 
 Use the Generate Multiple Artifact Information plug-in to generate one or more multiple properties from z/OS artifacts. The plug-in extracts data based on filters.
 
@@ -55,7 +55,3 @@ Watch video in link below on how to migrate from regular generate artifact infor
 
 [Multi Generate Artifact Information Plugin](https://community.ibm.com/community/user/wasdevops/viewdocument/ucd-zos-11-multi-generate-arti?CommunityKey=9adfe6b6-2e23-4895-8b27-38b93b5e152c&tab=librarydocuments)
 
-
-|          Back to ...          |                                |                                                                                 Latest Version                                                                                  | z/OS Multi Generate Artifact Information |                         |                   |                           |
-|:-----------------------------:|:------------------------------:|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:----------------------------------------:|:-----------------------:|:-----------------:|:-------------------------:|
-| [All Plugins](../../index.md) | [Deploy Plugins](../README.md) | [9.1168826](https://raw.githubusercontent.com/UrbanCode/IBM-UCD-PLUGINS/main/files/zos-multi-generate-artifact-info/ucd-plugins-zos-multi-generate-artifact-info-9.1168826.zip) |           [Readme](README.md)            | [Overview](overview.md) | [Steps](steps.md) | [Downloads](downloads.md) |
